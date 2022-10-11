@@ -1466,9 +1466,9 @@ subroutine fix_icon_soilm (ix, jx)
   use storage_module
   implicit none
   integer :: ix, jx
-  real, allocatable, dimension(:,:) :: soilm001, soilm002, soilm006, &
+  real, allocatable, dimension(:,:) :: soilm000, soilm002, soilm006, &
                      soilm018, soilm054, soilm162, soilm486, soilm999
-  allocate(soilm001(ix,jx))
+  allocate(soilm000(ix,jx))
   allocate(soilm002(ix,jx))
   allocate(soilm006(ix,jx))
   allocate(soilm018(ix,jx))
@@ -1476,7 +1476,7 @@ subroutine fix_icon_soilm (ix, jx)
   allocate(soilm162(ix,jx))
   allocate(soilm486(ix,jx))
   allocate(soilm999(ix,jx))
-  call get_storage(200100, 'SOILM001', soilm001, ix, jx)
+  call get_storage(200100, 'SOILM000', soilm000, ix, jx)
   call get_storage(200100, 'SOILM002', soilm002, ix, jx)
   call get_storage(200100, 'SOILM006', soilm006, ix, jx)
   call get_storage(200100, 'SOILM018', soilm018, ix, jx)
@@ -1485,7 +1485,7 @@ subroutine fix_icon_soilm (ix, jx)
   call get_storage(200100, 'SOILM486', soilm486, ix, jx)
   call get_storage(200100, 'SOILM999', soilm999, ix, jx)
     !convert kg m-2 to m3 m-3
-    soilm001 = soilm001 / 10.
+    soilm001 = soilm000 / 10.
     soilm002 = soilm002 / 20.
     soilm006 = soilm006 / 60.
     soilm018 = soilm018 / 180.
@@ -1493,7 +1493,7 @@ subroutine fix_icon_soilm (ix, jx)
     soilm162 = soilm162 / 1620.
     soilm486 = soilm486 / 4860.
     soilm999 = soilm999 / 14580.
-  call put_storage(200100, 'SOILM001', soilm001, ix, jx)
+  call put_storage(200100, 'SOILM000', soilm000, ix, jx)
   call put_storage(200100, 'SOILM002', soilm002, ix, jx)
   call put_storage(200100, 'SOILM006', soilm006, ix, jx)
   call put_storage(200100, 'SOILM018', soilm018, ix, jx)
@@ -1504,7 +1504,7 @@ subroutine fix_icon_soilm (ix, jx)
   
  print *,'fix_icon_soilm is done!'
 
-  deallocate(soilm001)
+  deallocate(soilm000)
   deallocate(soilm002)
   deallocate(soilm006)
   deallocate(soilm018)
