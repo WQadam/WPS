@@ -590,8 +590,7 @@ subroutine rrpr(hstart, ntimes, interval, nlvl, maxlvl, plvl, &
         if (index(map%source,'NCEP GFS') .ne. 0 .or.  &
             index(map%source,'NCEP GEFS') .ne. 0 .or. &
             index(map%source,'NCEP CDAS CFSV2') .ne. 0 .or.  &
-            index(map%source,'ECMWF') .ne. 0 .or. &
-            index(map%source,'DWD') .ne. 0 ) then
+            index(map%source,'ECMWF') .ne. 0 ) then
           call mprintf(.true.,DEBUG, &
              "RRPR:   Adjusting RH values ")
           do k = 1, nlvl
