@@ -791,8 +791,8 @@ subroutine rrpr(hstart, ntimes, interval, nlvl, maxlvl, plvl, &
             endif
        endif
 ! Convert soil moisture in ICON input from kg m-2 to m3 m-3      
-       if (index(map%source,'DWD') .ne. 0 .and. &
-          if (is_there(200100, 'SOILM000'))) then
+       if (index(map%source,'DWD') .ne. 0) then
+          if (is_there(200100, 'SOILM000')) then
            call get_dims(200100, 'SOILM000')
               print *,'Adjusting ICON soil moisture'
            call mprintf(.true.,DEBUG, &
