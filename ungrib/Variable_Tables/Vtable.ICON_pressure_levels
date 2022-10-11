@@ -5,7 +5,8 @@ Param| Type |Level1|Level2| Name     | Units   | Description                    
   33 | 100  |   *  |      | UU       | m s-1   | U                                       |  0  |  2  |  2  | 100 |
   34 | 100  |   *  |      | VV       | m s-1   | V                                       |  0  |  2  |  3  | 100 |
   52 | 100  |   *  |      | RH       | %       | Relative Humidity                       |  0  |  1  |  1  | 100 |
-   7 | 100  |   *  |      | HGT      | m       | Height                                  |  0  |  3  |  4  | 100 |
+ 129 | 100  |   *  |      | GEOPT    | m2 s-2  | Geopotential                            |  0  |  3  |  4  | 100 |
+     | 100  |   *  |      | HGT      | m       | Height                                  |     |     |     | 100 |
   11 | 105  |   2  |      | TT       | K       | Temperature       at 2 m                |  0  |  0  |  0  | 103 |
   33 | 105  |  10  |      | UU       | m s-1   | U                 at 10 m               |  0  |  2  |  2  | 103 |
   34 | 105  |  10  |      | VV       | m s-1   | V                 at 10 m               |  0  |  2  |  3  | 103 |
@@ -43,6 +44,6 @@ Param| Type |Level1|Level2| Name     | Units   | Description                    
 # Variables from server come as individual files per variable and timestep so need to merge them together.
 # Some variable only come for initial time so need to be added for each timestep being ingested into wps.
 #
-# FI which is geopoential height needs to be converted from m2/s2 to m when downloading (before running ungrib)
+# 
 # 
 #
